@@ -12,7 +12,6 @@ namespace JaegerApp\Validate\Rules\S3\Buckets;
 use JaegerApp\Validate\AbstractRule;
 use JaegerApp\Remote;
 use JaegerApp\Remote\S3 as m62S3;
-use JaegerApp\Validate\Rules\Filesystem\Readable;
 
 /**
  * Jaeger - Directory Validation Rule
@@ -70,5 +69,6 @@ class Readable extends AbstractRule
         }
     }
 }
+
 $rule = new Readable;
 \JaegerApp\Validate::addrule($rule->getName(), array($rule, 'validate'), $rule->getErrorMessage());

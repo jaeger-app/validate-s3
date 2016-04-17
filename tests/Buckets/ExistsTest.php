@@ -1,27 +1,26 @@
 <?php
 /**
- * mithra62 - Unit Test
+ * Jaeger
  *
- * @copyright	Copyright (c) 2015, mithra62, Eric Lamb.
- * @link		http://mithra62.com/
+ * @copyright	Copyright (c) 2015-2016, mithra62
+ * @link		http://jaeger-app.com
  * @version		1.0
- * @filesource 	./mithra62/tests/Validate/Rules/S3/ExistsTest.php
+ * @filesource 	./tests/Buckets/ReadableTest.php
  */
-namespace mithra62\tests\Validate\Rules\S3\Buckets;
+namespace JaegerApp\tests\Buckets;
 
-use mithra62\tests\TestFixture;
-use mithra62\Validate;
-use mithra62\Validate\Rules\S3\Buckets\Exists;
+use JaegerApp\Validate;
+use JaegerApp\Validate\Rules\S3\Buckets\Exists;
 
 /**
- * mithra62 - Valiate object Unit Tests
+ * Jaeger - Valiate object Unit Tests
  *
  * Contains all the unit tests for the \mithra62\Valiate object
  *
- * @package mithra62\Tests
+ * @package Jaeger\Tests
  * @author Eric Lamb <eric@mithra62.com>
  */
-class ExistsTest extends TestFixture
+class ExistsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -58,5 +57,13 @@ class ExistsTest extends TestFixture
             'connection_field' => 'Foo'
         ));
         $this->assertFALSE($val->hasErrors());
+    }
+
+    /**
+     * The Amazon S3 Test Credentials
+     */
+    protected function getS3Creds()
+    {
+        return include __DIR__. '/../data/s3creds.config.php';
     }
 }
