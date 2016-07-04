@@ -3,8 +3,8 @@
 	"description": "An Amazon S3 validation library for Jaeger\\Validate",
 	"require": {
 		"php": ">=5.4.0",
-		"jaeger-app/validate": "dev-master",
-		"jaeger-app/remote-s3": "dev-master"
+		"jaeger-app/validate": "^0.1",
+		"jaeger-app/remote-s3": "^0.1"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "4.*"
